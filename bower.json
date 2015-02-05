@@ -1,0 +1,32 @@
+{
+  "name": "timvoice-portfolio",
+  "version": "0.2.0",
+  "description": "portfolio, timothy voice",
+  "moduleType": [
+    "node"
+  ],
+  "keywords": [
+    "portfolio",
+    "middleman",
+    "foundation",
+    "web",
+    "developer",
+    "designer"
+  ],
+  "authors": [
+    "Timothy Voice"
+  ],
+  "license": "MIT",
+  "homepage": "www.timothyvoice.com",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "foundation": "~5.4.7"
+  }
+}
