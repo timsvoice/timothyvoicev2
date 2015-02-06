@@ -1,0 +1,20 @@
+  <div class="content-nav">
+    <div class="content-previous">
+      <% prev_article = current_article.previous_article %>
+      <% if prev_article && prev_article.data.type == current_page.data.type %>
+        Previous:
+        <a href="<%= prev_article.url %>" rel="prev">
+          <%= prev_article.title %>
+        </a>
+      <% end %>
+    </div>
+    <div class="content-next">
+      <% next_article = current_article.next_article %>
+      <% if next_article && next_article.data.type == current_page.data.type %>
+        Next:
+        <a href="<%= next_article.url %>" rel="next">
+          <%= next_article.title %>
+        </a>
+      <% end %>
+    </div>
+  </div>

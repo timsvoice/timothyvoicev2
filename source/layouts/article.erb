@@ -1,0 +1,21 @@
+<% wrap_layout :layout do %>
+
+  <h2><%= current_page.title %></h2>
+  
+  <aside class="article-summary">
+    <p class="article-summary">
+      <%= current_page.data.intro %>
+    </p>
+  </aside>
+  
+  <% current_page.tags.each do |tag| %>
+    <a class="article-tag" href="<%= tag_path tag %>"><%= tag %></a>
+  <% end %>
+
+  <article class="article-body">
+    <%= yield %>
+  </article>
+  
+  <%= partial 'content-navigation' %>
+
+<% end %>
