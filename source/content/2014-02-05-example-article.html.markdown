@@ -1,10 +1,16 @@
 ---
-title: Example Article
-date: 2014-02-03
+title: Example Article 4
+date: 2014-02-05
 type: article
 layout: article
-intro: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam nulla tempora, quidem doloribus voluptas placeat doloremque recusandae, molestiae eius ipsum!
-tags: HTML, Sass, AngularJs
+intro: Middleman articles and ordering
+tags: Middleman
 ---
 
-Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam excepturi nemo tempore voluptates natus soluta atque illum autem doloribus et optio, ex magni odio ducimus aut nihil nisi! READMORE Explicabo nisi quod iste voluptates itaque placeat, debitis rerum nemo aperiam repellat ex, laboriosam eos, neque pariatur voluptas nihil odit adipisci. Incidunt nobis consequuntur, commodi excepturi expedita voluptates cum aut maxime in. Voluptates dolores saepe consectetur accusamus officiis ratione! Repellat quia saepe tempore ratione, fugit eos, eum facere asperiores ipsam dolorum ipsum, soluta cumque consequuntur quibusdam explicabo totam doloremque suscipit fugiat vero atque minus dignissimos. Obcaecati assumenda ut sapiente quo non voluptate.
+#middleman
+
+**data:**
+
+Middleman blog posts (articles) are stored in hashes, not arrays as you may be used to. They key difference is where arrays are integer-indexed, hashes are key-value pairs where indexing is done via arbitrary keys of any object type. Entries in hashes are stored in the order in which they were entered. 
+
+This means that the 'latest article' is a relative term; you need to define the criteria of latest (date, title etc) before you can find the latest entry.

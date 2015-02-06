@@ -1,6 +1,6 @@
 ---
-title: Example Article 3
-date: 2014-02-04
+title: Example Article 6
+date: 2014-02-10
 type: article
 layout: article
 intro: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam nulla tempora, quidem doloribus voluptas placeat doloremque recusandae, molestiae eius ipsum!
