@@ -1,25 +1,25 @@
 <% wrap_layout :layout do %>
 
-  <h2><%= current_page.title %></h2>
+<div class="project-container">  
+  <h2 class="project-title"><%= current_page.title %></h2>
   
   <div class="project-feature">
     <%= image_tag current_page.data.feature, :class => 'project-feature-image' %>
   </div>
 
-  <aside class="project-summary">
-    <p class="project-summary">
-      <%= current_page.data.intro %>
-    </p>
-  </aside>
+  <p class="project-summary">
+    <%= current_page.data.intro %>
+  </p>
   
   <% current_page.tags.each do |tag| %>
     <a class="project-tag" href="<%= tag_path tag %>"><%= tag %></a>
   <% end %>
-
+  
   <article class="project-body">
     <%= yield %>
   </article>
 
   <%= partial 'content-navigation' %>
+</div> 
 
 <% end %>

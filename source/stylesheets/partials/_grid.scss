@@ -1,11 +1,154 @@
 .alpha {
-  	padding-left: 0px !important;
+  padding-left: 0px !important;
 }
 
 .beta {
 	padding-right: 0px !important;
 }
 
-hr.section {
-	margin: 2rem 0rem 1rem 0rem;
+#main {
+  background-color: $color-background;
+  margin-top: 3.5rem;
+}
+
+// articles
+
+.article-lead {
+  @extend .small-12, .medium-8 , .medium-offset-2, .columns;
+  margin-top: 3rem;
+  @include breakpoint(small) {
+    margin-top: 1rem;
+  }
+  &-container {
+    background-color: $color-brand;
+  }  
+}
+
+// projects
+
+.project {
+  &-list-container {
+    background-image: url("http://placehold.it/1200x400");
+    background-position: center;
+    height: 400px;
+    position: relative;
+    @include breakpoint(small) {
+      padding: 0 0.25rem;
+    }        
+  }
+  &-horizon {
+    @include horizon();
+  }
+  &-list-details {
+    @include dead-center($width: 250px, $height: 161px);
+    @include border-color($color-background);
+    @include border-width(0.125rem);
+    @include border-style(solid);    
+    background-color: transparentize($color-base, 0.2);
+    padding: 2rem 1rem;
+    &:hover {
+      background-color: transparentize($color-base, 0.4);
+    }
+  }
+  &-title {
+    a {
+      color: $color-background;
+    }
+  }
+  &-tags {
+    @include grid-column(12);
+    list-style-type: none;
+    margin-left: 0;
+    padding-left: 0;
+    > li {
+      display: inline-block;
+      a {
+        color: $color-background;
+      }
+    }
+  }
+  &-body {
+
+  }
+}
+
+//article
+
+.article {
+  &-container {
+    @include grid-row();    
+    padding-left: 0.875rem;
+    padding-right: 0.875rem;
+    article {
+      @extend .small-12, .medium-8, .medium-offset-2, .columns;
+      margin-top: 4rem;
+      @include breakpoint(small) {
+        margin-top: 1rem;
+      }
+    }
+  }
+  &-summary {
+    @extend .small-12, .columns;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    padding-left: 0;
+    p {
+      @extend .small-12, .medium-8, .columns;
+      padding-left: 0;
+    }
+  }
+  &-tags {
+    @extend .small-12, .columns;
+    padding-left: 0;
+    padding-bottom: 1rem;
+  }
+  &-body {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+// footer 
+
+footer {
+  @extend .clearfix;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  background-color: darken($color-brand, 0%);
+  .contact, .colophon {
+    // @extend .alpha, .beta;
+    @extend .small-12, .medium-6, .columns;    
+    color: $color-background;
+    &-list {
+      list-style: none;
+      margin-left: 0;
+      &-item > a {
+        color: $color-background;
+        font-size: 1rem;
+        font-weight: $text-light;
+      }
+    }
+    &-title {
+      color: $color-background;
+      font-weight: $text-heavy;
+    }
+    &-body {
+      color: $color-background;
+      font-weight: $text-light;
+    }
+  }
+}
+
+// tags
+
+.tag {
+  &-container {
+    @include grid-row();
+  }
+  &-list {
+    @extend .small-12, .medium-8, .columns;    
+    @extend .alpha, .beta;
+    list-style: none;
+    margin-left: 0;    
+  }
 }

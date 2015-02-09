@@ -5,7 +5,8 @@
 # Time.zone = "UTC"
 
 activate :blog do |blog|
-  blog.sources = "content/{title}.html"
+  # blog.sources = "https://s3-us-west-2.amazonaws.com/timvoice/content/{title}.html"
+  blog.sources = "content/{title}.html"  
   blog.permalink = "{type}/{title}.html"
   # Matcher for blog source files
   # blog.sources = "{year}-{month}-{day}-{title}.html"
@@ -21,11 +22,12 @@ activate :blog do |blog|
   blog.tag_template = "tag.html"
   blog.calendar_template = "calendar.html"
 
-  # blog.custom_collections = {
-  #   type: {
-  #     link: '{type}.html'
-  #   }
-  # }
+  blog.custom_collections = {
+    type: {
+      link: '{type}.html',
+        template: '/type.html'
+    }
+  }
 
   # Enable pagination
   # blog.paginate = true

@@ -1,0 +1,70 @@
+// links
+
+a {
+  color: $color-link;
+  text-decoration: none;
+  &:hover {
+    color: darken($color-link, 20%);
+  }
+}
+
+.underline {
+  color: darken($color-link, 20%);
+  border-bottom: 1px solid darken($color-link, 20%);  
+}
+
+.underline-animation {
+  @extend .underline;
+  
+  border-bottom: none;
+}
+
+h1, h2, h3, h4, h5, p {
+  color: $color-text;
+}
+
+.top-bar {
+  .name > h1 > a {
+    // @extend .alpha;  
+    color: $color-background;
+  }
+}
+
+.article {
+  &-title {
+    font-size: 3rem;
+    line-height: 4rem;
+    font-weight: $text-heavy;
+  }
+  &-summary > p {
+    color: lighten($color-link, 15%);
+    font-style: italic;    
+  }
+  &-lead {
+    &-title > a {
+      color: $color-background;
+      font-size: 4rem;
+      line-height: 5rem;
+      font-weight: $text-heavy;
+    }
+    &-body > p {
+      color: $color-background;
+      font-size: 1.25rem;
+      line-height: 2rem;
+      font-weight: $text-light;
+    }
+  }
+  &-tag {
+    @extend .underline;
+  }  
+}
+
+// content navigation
+.content {
+  &-previous, &-next {
+    > a {
+      font-size: 1.5rem;
+      font-weight: $text-heavy;
+    }
+  }
+}

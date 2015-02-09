@@ -10,3 +10,5 @@ gem "builder", "~> 3.0"
 
 gem "sass", "3.4.9"
 gem "middleman-livereload", "~> 3.3.0"
+gem "middleman-jquery"
+gem "nokogiri"

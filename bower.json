@@ -27,6 +27,8 @@
     "tests"
   ],
   "dependencies": {
-    "foundation": "~5.4.7"
+    "foundation": "~5.4.7",
+    "slick.js": "~1.4.1",
+    "bourbon": "~4.2.0"
   }
 }

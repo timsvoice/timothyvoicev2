@@ -2,43 +2,39 @@
 pageable: false
 ---
 
-<div class="article">
-  <% article = blog.articles.sort_by{|y| y.date}.last %>
-    <% if article.data.type == "article" %>
-      <h3 class="article-title">
-        <%= link_to article.title, article %>
-      </h3>
-      <p class="article-body">
-        <%= article.data.intro %>
-      </p>
-    <% end %>
-</div>
-
-<aside>
-  <ul class="article-list">
-    <% blog.articles[1...4].each do |article| %>
-    <% if article.data.type == "article" %>
-      <li class="article-list-item">
-       <h4 class="article-list-item-title"><%= link_to article.title, article %></h4>
-      </li>
+<div class="article-lead-container" id="splash">
+  <div class="article-lead">
+    <% blog.articles.each do |article| %>
+      <% if article.data.type == "article" %>
+        <div class="article">        
+          <h3 class="article-lead-title">
+            <%= link_to article.title, article %>
+          </h3>
+          <div class="article-lead-body">
+            <%= article.summary %>
+          </div>
+        </div>
       <% end %>
     <% end %>
-  </ul>
-</aside>
+  </div>
+</div>
 
 <% page_articles.each_with_index do |article, i| %>
   <% if article.data.type == "project" %>
-  <div class="project-container">
-    <h3 class="project-title"><%= link_to article.title, article %> <span></span></h3>
-    <% article.tags.each do |tag| %>
-      <ul class="project-tags">
-        <li>
-          <a class="project-tag" href="<%= tag_path tag %>"><%= tag %></a>
-        </li>
-      </ul>
-    <% end %>
-    <%= image_tag article.data.feature, :class => 'project-image' %>    
-  </div>
+    <div id="projects" class="project-list-container">      
+      <div class="project-horizon">      
+        <div class="project-list-details">    
+           <h3 class="project-title"><%= link_to article.title, article %></h3>
+           <ul class="project-tags">
+             <% article.tags.each do |tag| %>
+               <li>
+                 <a class="project-tag" href="<%= tag_path tag %>"><%= tag %></a>
+               </li>
+             <% end %>
+           </ul>
+         </div>
+       </div> 
+    </div>
   <% end %>
 <% end %>
 

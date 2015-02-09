@@ -1,12 +1,14 @@
-*, body {
+body {
+  // padding-left: 0.5rem;
+  // padding-right: 0.5rem;
+  @include breakpoint(large) {
+    padding-left: 0rem;
+    padding-right: 0rem;
+  }
 }
 
 hr {
 	margin: 0;
-}
-
-:focus {
-	background:white;
 }
 
 .vcard {
@@ -18,4 +20,8 @@ hr {
 
 .hidden {
 	display: none !important;
+}
+
+:focus {
+  // background: initial !important;
 }

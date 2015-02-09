@@ -1,21 +1,28 @@
 <% wrap_layout :layout do %>
 
-  <h2><%= current_page.title %></h2>
-  
-  <aside class="article-summary">
-    <p class="article-summary">
-      <%= current_page.data.intro %>
-    </p>
-  </aside>
-  
-  <% current_page.tags.each do |tag| %>
-    <a class="article-tag" href="<%= tag_path tag %>"><%= tag %></a>
-  <% end %>
+ <div class="article-container"> 
+  <article>
 
-  <article class="article-body">
-    <%= yield %>
-  </article>
-  
+    <h2 class="article-title"><%= current_page.title %></h2>
+   
+     <aside class="article-summary">
+       <p>
+         <%= current_page.data.intro %>
+       </p>
+     </aside>
+     
+    <div class="article-tags">   
+      <% current_page.tags.each do |tag| %>
+         <a class="article-tag" href="<%= tag_path tag %>"><%= tag %></a>
+      <% end %>
+    </div>
+    
+  <%= yield %>
+
+   </article>
+    
   <%= partial 'content-navigation' %>
+  
+  </div>
 
 <% end %>
